@@ -1,0 +1,18 @@
+# Dockerfile.dev
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copia APENAS os arquivos de dependência primeiro (para cache)
+COPY package.json package-lock.json ./
+
+# Instala dependências
+RUN npm install
+
+# Copia o resto do código
+COPY . .
+
+EXPOSE 5174
+
+# Comando padrão (será sobrescrito pelo docker-compose)
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

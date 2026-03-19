@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev  # OU "Dockerfile" se renomear
+    ports:
+      - "5173:5173"  # Acessa em http://localhost:5174
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    # OPCIONAL: Se quiser sobrescrever o CMD do Dockerfile
+    # command: npm run dev -- --host 0.0.0.0

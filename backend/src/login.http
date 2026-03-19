@@ -1,0 +1,7 @@
+
+
+
+### Buscar usuários (com token)
+GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlZGlsc29ubHVjaWFib0BnbWFpbC5jb20iLCJpYXQiOjE3NDk0OTMxNTAsImV4cCI6MTc0OTQ5Njc1MH0.EFGppZ1iFvWnEfEy6V9IME7sWHYvGN_C8MfVxE8KK4k

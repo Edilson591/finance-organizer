@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          Int           @id @default(autoincrement())
+  name        String
+  type        String
+  userId      Int
+  user        User          @relation(fields: [userId], references: [id])
+  transaction Transaction[]
+}
+
+model Transaction {
+  id          Int              @id @default(autoincrement())
+  userId      Int
+  accountId   Int
+  amount      Float
+  description String?
+  date        DateTime?
+  type        transaction_type
+  categoryId  Int?
+  created_at  DateTime         @default(now())
+  updated_at  DateTime
+  category    Category?        @relation(fields: [categoryId], references: [id])
+  user        User             @relation(fields: [userId], references: [id])
+
+  @@index([categoryId])
+  @@index([userId])
+}
+
+model User {
+  id               Int           @id @default(autoincrement())
+  username         String
+  email            String        @unique(map: "User_email_key")
+  password         String
+  roleName         Int           @default(8)
+  resetCode        String?
+  resetCodeExpires DateTime?
+  cpf              String?
+  cnpj             String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime
+  category         Category[]
+  transaction      Transaction[]
+  accounts         Account[]
+}
+
+model Account {
+  id         Int         @id @default(autoincrement())
+  name       String
+  type       AccountType
+  userId     Int
+  balance    Int         @default(0)
+  user       User        @relation(fields: [userId], references: [id], map: "Account_userId_fkey", onDelete: Cascade)
+  created_at DateTime    @default(now())
+  updated_at DateTime    @updatedAt
+}
+
+enum transaction_type {
+  income
+  expense
+}
+
+enum AccountType {
+  WALLET
+  BANK
+  CREDIT_CARD
+}
