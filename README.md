@@ -75,7 +75,7 @@ npm install
 cp .env.example .env       # configure suas variáveis de ambiente
 npm run dev                # inicia em modo desenvolvimento### 2️⃣ Frontend
 
-```bash
+
 cd frontend
 npm install
 cp .env.example .env       # configure suas variáveis de ambiente
