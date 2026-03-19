@@ -7,25 +7,29 @@ Inclui dashboard interativo, cadastro de despesas e receitas, categorias, gráfi
 
 ## 🏗 Estrutura do Projeto
 
+```bash
 finance-organizer/
-├─ backend/                  # Node.js API
-│  ├─ src/
-│  │  ├─ controllers/        # lógica de rotas
-│  │  ├─ models/             # schemas do banco de dados
-│  │  ├─ routes/             # endpoints da API
-│  │  └─ app.ts              # servidor Express
-│  ├─ package.json
-│  └─ .env                   # variáveis de ambiente
-├─ frontend/                 # React + TypeScript
-│  ├─ src/
-│  │  ├─ components/         # botões, inputs, cards, gráficos
-│  │  ├─ pages/              # páginas: Dashboard, Login, Despesas, Receitas
-│  │  ├─ services/           # comunicação com a API
-│  │  └─ App.tsx             # componente principal
-│  ├─ package.json
-│  └─ tsconfig.json
+├─ backend/ # Node.js API
+│ ├─ src/
+│ │ ├─ controllers/ # lógica de rotas
+│ │ ├─ models/ # schemas do banco de dados
+│ │ ├─ routes/ # endpoints da API
+│ │ └─ app.ts # servidor Express
+│ ├─ package.json
+│ └─ .env # variáveis de ambiente
+├─ frontend/ # React + TypeScript
+│ ├─ src/
+│ │ ├─ components/ # botões, inputs, cards, gráficos
+│ │ ├─ pages/ # páginas: Dashboard, Login, Despesas, Receitas
+│ │ ├─ services/ # comunicação com a API
+│ │ └─ App.tsx # componente principal
+│ ├─ package.json
+│ └─ tsconfig.json
 ├─ .gitignore
 └─ README.md
+```
+
+---
 
 ## 💻 Tecnologias Utilizadas
 
