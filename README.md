@@ -89,13 +89,16 @@ npm run dev
 
 **Exemplo .env Backend:**
 
+```bash
 PORT=5000
 DB_URI=<sua-string-de-conexao>
 JWT_SECRET=<segredo-jwt>
+```
 
 **Exemplo .env Frontend:**
-
+```bash
 REACT_APP_API_URL=http://localhost:5000
+```
 
 ---
 
